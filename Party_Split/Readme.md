@@ -1,0 +1,1 @@
+### By completing this challenge you demonstrate your ability to handle ether payments, both to and from the smart contract. You'll be able to accept and account for ether being stored in the contract, and then send that ether to other addresses when the conditions call for it!
