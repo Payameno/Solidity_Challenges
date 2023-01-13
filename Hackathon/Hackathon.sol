@@ -9,7 +9,25 @@ contract Hackathon {
     
     Project[] projects;
 
-    // TODO: add the findWinner function
+    //Finds the winner based average score of all ratings
+    function findWinner() external view returns(Project memory){
+      uint topAverage = 0;
+      Project memory winner;
+
+      for (uint i = 0; i < projects.length; i++) {
+          uint sum;
+        for (uint j; j < projects[i].ratings.length; j++) {
+          sum += projects[i].ratings[j];
+        }
+        uint avg = sum / projects[i].ratings.length;
+        
+        if (topAverage < avg) {
+          topAverage = avg;
+          winner = projects[i];
+        } 
+      }
+      return winner;
+    }
 
     function newProject(string calldata _title) external {
         // creates a new project with a title and an empty ratings array
